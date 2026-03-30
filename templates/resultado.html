@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8 col-lg-7">
+        <div class="card shadow">
+            <div class="card-body">
+                <h1 class="text-center mb-4">Resultado do Cálculo</h1>
+
+                <div class="mb-4 text-center">
+                    <span class="badge bg-{{ cor }} fs-6 px-3 py-2">
+                        {{ classificacao }}
+                    </span>
+                </div>
+
+                <div class="mb-3">
+                    <p><strong>Valor da gorjeta:</strong> R$ {{ "%.2f"|format(valor_gorjeta) }}</p>
+                    <p><strong>Valor total com gorjeta:</strong> R$ {{ "%.2f"|format(total) }}</p>
+                    <p><strong>Valor por pessoa:</strong> R$ {{ "%.2f"|format(por_pessoa) }}</p>
+                </div>
+
+                <div class="text-center">
+                    <a href="{{ url_for('index') }}" class="btn btn-primary">Novo cálculo</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
