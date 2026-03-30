@@ -53,9 +53,9 @@ def index():
                 flash(erro)
             return render_template("index.html")
 
-        valor_gorjeta = conta * (gorjeta / 100)
-        total = conta + valor_gorjeta
-        por_pessoa = total / pessoas
+        valor_gorjeta = round ( conta * (gorjeta / 100 ) ,2 )
+        total = round (conta + valor_gorjeta, 2)
+        por_pessoa = round ( total / max( pessoas ,1) ,2)
 
         if gorjeta < 5:
             classificacao = "Mão de vaca"
