@@ -20,3 +20,9 @@ footer {
     text-align: center;
     margin-top: 30px;
 }
+
+.bg-roxo {
+    background: linear-gradient(45deg,#6f42c1, #9b59b6 );
+    color: white;
+    front-weight: bold;
+}

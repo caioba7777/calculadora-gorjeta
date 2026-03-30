@@ -57,15 +57,19 @@ def index():
         total = round (conta + valor_gorjeta, 2)
         por_pessoa = round ( total / max( pessoas ,1) ,2)
 
-        if gorjeta < 5:
+        if gorjeta <= 5:
             classificacao = "Mão de vaca"
             cor = "danger"
+        elif gorjeta <= 10:
+            classificacao = "legal"
+            cor = "warning"      
         elif gorjeta <= 15:
-            classificacao = "Legal"
-            cor = "warning"
-        else:
             classificacao = "Generoso"
             cor = "success"
+        
+        else :
+            classificacao = "reizinho delas"
+            cor = "roxo"
 
         return render_template(
             "resultado.html",
